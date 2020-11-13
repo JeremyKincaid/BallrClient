@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const EventCreate = (props) => {
 
@@ -45,37 +46,45 @@ const EventCreate = (props) => {
               console.log(rObj);
               resetForm();
               props.fetchEvents();
+              props.toggleCreate();
           })
     }
 
     return(
         <div>
-            <form>
-                <label htmlFor="eventName">Name</label>
-                <input id="eventName" value={name} onChange={e => setName(e.target.value)} />
-                <br/>
-                <label htmlFor="sport">Sport</label>
-                <input id="sport" value={sport} onChange={e => setSport(e.target.value)} />
-                <br/>
-                <label htmlFor="location">Location</label>
-                <input id="location" value={location} onChange={e => setLocation(e.target.value)} />
-                <br/>
-                <label htmlFor="date">Date</label>
-                <input id="date" value={date} onChange={e => setDate(e.target.value)} />
-                <br/>
-                <label htmlFor="startTime">Start Time</label>
-                <input id="startTime"value={startTime} onChange={e => setStartTime(e.target.value)} />
-                <br/>
-                <label htmlFor="endTime">End Time</label>
-                <input id="endTime" value={endTime} onChange={e => setEndTime(e.target.value)} />
-                <br/>
-                <label htmlFor="maxPlayers">Maximum ammount of players(including you)</label>
-                <input id="maxPlayers" type="range" min="1" max="50" value={maxPlayers} onChange={e => setMaxPlayers(e.target.value)} />
-                <p>{maxPlayers}</p>
-                <br/>
-                <button id="resetForm" onClick={resetForm} type="button">Reset</button>
-                <button onClick={handleSubmit}>Done</button>
-            </form>
+            <Form>
+                <FormGroup>
+                    <Label htmlFor="eventName">Name</Label>
+                    <Input id="eventName" value={name} onChange={e => setName(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="sport">Sport</Label>
+                    <Input id="sport" value={sport} onChange={e => setSport(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="location">Location</Label>
+                    <Input id="location" value={location} onChange={e => setLocation(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="date">Date</Label>
+                    <Input id="date" value={date} onChange={e => setDate(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="startTime">Start Time</Label>
+                    <Input id="startTime"value={startTime} onChange={e => setStartTime(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="endTime">End Time</Label>
+                    <Input id="endTime" value={endTime} onChange={e => setEndTime(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="maxPlayers">Maximum ammount of players(including you)</Label>
+                    <Input id="maxPlayers" type="range" min="1" max="50" value={maxPlayers} onChange={e => setMaxPlayers(e.target.value)} />
+                    <p>{maxPlayers}</p>
+                </FormGroup>
+                <Button id="resetForm" onClick={resetForm} type="button">Reset</Button>
+                <Button onClick={handleSubmit}>Done</Button>
+            </Form>
         </div>
     )
 }
