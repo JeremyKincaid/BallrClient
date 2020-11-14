@@ -1,5 +1,7 @@
-import React, {useState, useEffect} from 'react'; 
+
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Event from './components/Event/Event';
 import Auth from './components/Auth/Auth'; 
 import Logout from './components/Logout/Logout'; 
 
@@ -29,6 +31,7 @@ const App = () => {
   return (
     <div className="App">
       { !sessionToken ? <Auth updateToken={updateToken} /> : <Logout clearToken={clearToken} /> } 
+      <Event />
     </div>
   );
 }
