@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Auth from './components/Auth/Auth'; 
 import Logout from './components/Logout/Logout'; 
+import Navbar from './components/Navbar/Navbar'; 
 
 const App = () => {
 
@@ -28,7 +29,7 @@ const App = () => {
 
   return (
     <div className="App">
-      { !sessionToken ? <Auth updateToken={updateToken} /> : <Logout clearToken={clearToken} /> } 
+      { !sessionToken ? <Auth updateToken={updateToken} /> : <Navbar clearToken={clearToken} /> } 
     </div>
   );
 }
