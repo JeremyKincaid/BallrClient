@@ -32,7 +32,8 @@ const EventCreate = (props) => {
             startTime: startTime,
             endTime: endTime,
             currentPlayers: currentPlayers,
-            maxPlayers: maxPlayers
+            maxPlayers: maxPlayers,
+            createdById: props.currentUser
         }
         fetch('http://localhost:3000/event/new', {
             method: 'POST',
@@ -82,8 +83,8 @@ const EventCreate = (props) => {
                     <Input id="maxPlayers" type="range" min="1" max="50" value={maxPlayers} onChange={e => setMaxPlayers(e.target.value)} />
                     <p>{maxPlayers}</p>
                 </FormGroup>
-                <Button id="resetForm" onClick={resetForm} type="button">Reset</Button>
-                <Button onClick={handleSubmit}>Done</Button>
+                <Button className="cancelBtn" onClick={resetForm} type="button">Reset</Button>
+                <Button className="submitEventBtn" onClick={handleSubmit}>Done</Button>
             </Form>
         </div>
     )

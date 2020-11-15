@@ -28,7 +28,7 @@ const Event = (props) => {
     if (isCreating) {
         return (
             <div>
-                <EventCreate fetchEvents={fetchEvents} toggleCreate={toggleCreate} />
+                <EventCreate fetchEvents={fetchEvents} toggleCreate={toggleCreate} currentUser={props.currentUser} />
             </div>
         );
 

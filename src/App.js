@@ -8,6 +8,7 @@ import Logout from './components/Logout/Logout';
 const App = () => {
 
   const [sessionToken, setSessionToken] = useState(undefined);
+  const [currentUser, setCurrentUser] = useState(undefined);
   
   useEffect(
     () => {
@@ -18,20 +19,33 @@ const App = () => {
     }, [] // empty bracket fixes code continuously running. 
   )
 
-  const updateToken = (newToken) => {
-    setSessionToken(newToken) 
-    localStorage.setItem('token', newToken) // this makes sure the user is still logged in with their token if the page refreshes or the user leaves the page 
+  useEffect(
+    () => {
+      const currentID = localStorage.getItem('userID');
+      if(currentID) {
+        setCurrentUser(currentID);
+      }
+    }, []
+  )
+
+  const updateToken = (newToken, userID) => {
+    setSessionToken(newToken); 
+    localStorage.setItem('token', newToken);
+     // this makes sure the user is still logged in with their token if the page refreshes or the user leaves the page 
+    localStorage.setItem('userID', userID);//This will allow us to run logic that needs the ID of the current user.
   }
 
   const clearToken = () => {
-    setSessionToken(clearToken)
+    setSessionToken(undefined)
     localStorage.clear()
   }
 
   return (
     <div className="App">
-      { !sessionToken ? <Auth updateToken={updateToken} /> : <Logout clearToken={clearToken} /> } 
-      <Event />
+      { !sessionToken ? <Auth updateToken={updateToken} /> : <div>
+          <Logout clearToken={clearToken} />
+          <Event currentUser={currentUser} />
+        </div>}
     </div>
   );
 }
