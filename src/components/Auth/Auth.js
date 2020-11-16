@@ -1,4 +1,5 @@
 import React, { useState } from 'react'; 
+import './Auth.css';
 
 
 const Auth = (props) => {
@@ -53,7 +54,7 @@ const Auth = (props) => {
                 <br />
                 <input id="rating" value={rating} onChange={e => setRating(e.target.value)} />
                 <br />
-                <label htmlFor="displayname">DisplayName</label>
+                <label htmlFor="displayname">Display Name</label>
                 <br />
                 <input id="displayname" value={displayname} onChange={e => setDisplayName(e.target.value)} />
             </div>
@@ -62,9 +63,9 @@ const Auth = (props) => {
     }
 
     return (
-        <div>
+        <div className="mainDiv">
             <form>
-                <h1>{login ? 'Login' : 'Signup'}</h1>
+                <h1 className="login">{login ? 'Login' : 'Signup'}</h1>
 
                 <label htmlFor="email">Email</label>
                 <br />
@@ -76,9 +77,10 @@ const Auth = (props) => {
                 <br />
                 {signupFields()}
                 <br />
-            <button type='button' onClick={loginToggle}>{login ? "Need a login? Click here!" : "Have a login already? Click here!"}</button>
-                <button onClick={handleSubmit}>Submit</button>
-        </form>
+                <button className="submitButton"onClick={handleSubmit}>Submit</button>
+                <br />
+                <button type='button' className="loginButton"onClick={loginToggle}>{login ? "Click here to Signup" : "Have a login already? Click here!"}</button> 
+            </form>
         </div>
     )
 }

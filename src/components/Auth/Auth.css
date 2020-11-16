@@ -1,0 +1,76 @@
+.mainDiv {
+    display: flex; 
+    justify-content: center;
+    background-color: #455a64;
+}
+
+h1 {
+    color: white; 
+    text-shadow:
+		-0.5px -0.5px 0 #90cc00,
+		0.5px -0.5px 0 #90cc00,
+		-0.5px 0.5px 0 #90cc00,
+		0.5px 0.5px 0 #90cc00;
+}
+
+br {
+    margin: 10px; 
+}
+
+label {
+    color: white; 
+    font-size: 20px;
+}
+
+input {
+    border: solid 2.5px  #c6ff00; 
+    padding: 2px; 
+}
+
+input:focus, textarea:focus
+{
+outline-offset: 0px;
+outline: none;
+}
+
+.login {
+    font-size: 60px;
+}
+
+.submitButton {
+    margin: 15px; 
+    border: solid 2.5px #fdff58;
+    width: 70px;
+    height: 30px; 
+    font-size: 17px;
+} 
+
+.loginButton {
+    border: solid 2.5px #fdff58;
+}
+
+button:active, 
+button:focus
+{
+    outline-offset: 0px;
+    outline: none;
+}
+
+#email {
+    margin: 10px; 
+    margin-bottom: 30px;
+}
+
+#password {
+    margin: 10px; 
+    margin-bottom: 30px;
+}
+
+#rating {
+    margin: 15px; 
+    margin-bottom: 30px;
+}
+
+#displayname {
+    margin: 15px; 
+}

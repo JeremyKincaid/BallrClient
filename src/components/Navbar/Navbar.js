@@ -1,5 +1,5 @@
-import React, {useState} from 'react'; 
-import { Navbar, Nav, NavItem, NavbarToggler} from 'reactstrap'; 
+import React from 'react'; 
+import { Navbar, Nav} from 'reactstrap'; 
 import Logout from '../Logout/Logout'; 
 import './Navbar.css'; 
 
