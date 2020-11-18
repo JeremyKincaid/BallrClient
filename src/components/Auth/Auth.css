@@ -1,8 +1,8 @@
-.mainDiv {
-    display: flex; 
+.formRow {
+    text-align: center; 
     justify-content: center;
-    background-color: #455a64;
 }
+
 
 h1 {
     color: white; 
@@ -10,7 +10,7 @@ h1 {
 		-0.5px -0.5px 0 #90cc00,
 		0.5px -0.5px 0 #90cc00,
 		-0.5px 0.5px 0 #90cc00,
-		0.5px 0.5px 0 #90cc00;
+        0.5px 0.5px 0 #90cc00;
 }
 
 br {
@@ -19,7 +19,7 @@ br {
 
 label {
     color: white; 
-    font-size: 20px;
+    font-size: 24px;
 }
 
 input {
@@ -34,20 +34,32 @@ outline: none;
 }
 
 .login {
-    font-size: 60px;
+    font-size: 68px;
+    margin-top: 10%;
+    margin-bottom: 10%;  
 }
 
-.submitButton {
+.btn-primary {
     margin: 15px; 
-    border: solid 2.5px #fdff58;
+    border: solid 1px #fdff58;
     width: 70px;
     height: 30px; 
     font-size: 17px;
+    background-color:  #c6ff00;
+    border-radius: 5%;
+    color:  #1c313a;
 } 
 
-.loginButton {
-    border: solid 2.5px #fdff58;
-}
+.btn-secondary {
+    border: solid 1px #fdff58;
+    margin: 10px; 
+    width: 170px; 
+    height: 50px; 
+    font-size: 16.5px;
+    background-color: #c6ff00;
+    border-radius: 5%;
+    color:  #1c313a;
+}  
 
 button:active, 
 button:focus
@@ -59,18 +71,38 @@ button:focus
 #email {
     margin: 10px; 
     margin-bottom: 30px;
+    width: 230px; 
 }
 
 #password {
     margin: 10px; 
     margin-bottom: 30px;
+    width: 230px; 
 }
 
-#rating {
+/* #rating {
     margin: 15px; 
     margin-bottom: 30px;
-}
+} */
 
 #displayname {
     margin: 15px; 
+    width: 230px; 
 }
+
+.logoDiv {
+    padding-left: 15%;
+    margin-top: 2%; 
+}
+
+.col-sm-2 h2 {
+    color: white; 
+    font-size: 135px;
+    text-shadow:
+		-1.5px -1.5px 0 #90cc00,
+		1.5px -1.5px 0 #90cc00,
+		-1.5px 1.5px 0 #90cc00,
+        1.5px 1.5px 0 #90cc00;
+}
+
+
