@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './EventItem.css';
 
 const EventItem = (props) => {
+
+    const [hostName, setHostName] = useState();
+
+    useEffect(
+        () => {
+            fetchHostName()
+        }
+    )
+
+    const fetchHostName = () => {
+        fetch(`http://localhost:3000/user/${props.ev.createdById}`, {
+            method: 'GET'
+        }).then(r => r.json())
+          .then(rObj => {
+            console.log("displayname:" + props.ev.createdById +rObj.user.displayname)  
+            setHostName(rObj.user.displayname)})
+    }
 
     return(
         <div className="ev-card">
@@ -12,8 +29,9 @@ const EventItem = (props) => {
             <p>Starts: {props.ev.startTime}</p>
             <p>Ends: {props.ev.endTime}</p>
             <p>{props.ev.currentPlayers} out of {props.ev.maxPlayers}</p>
+            <p>Host: {hostName}</p>
         </div>
     )
 }
 
-export default EventItem
+export default EventItem;

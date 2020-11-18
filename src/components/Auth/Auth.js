@@ -76,9 +76,9 @@ const Auth = (props) => {
                 <br />
                 {signupFields()}
                 <br />
-            <button type='button' onClick={loginToggle}>{login ? "Need a login? Click here!" : "Have a login already? Click here!"}</button>
+                <button type='button' onClick={loginToggle}>{login ? "Need a login? Click here!" : "Have a login already? Click here!"}</button>
                 <button onClick={handleSubmit}>Submit</button>
-        </form>
+            </form>
         </div>
     )
 }
