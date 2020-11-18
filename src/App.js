@@ -4,6 +4,7 @@ import './App.css';
 import Event from './components/Event/Event';
 import Auth from './components/Auth/Auth'; 
 import Logout from './components/Logout/Logout'; 
+import UserProfile from './components/UserProfile/UserProfile';
 
 const App = () => {
 
@@ -40,12 +41,16 @@ const App = () => {
     localStorage.clear()
   }
 
+
   return (
     <div className="App">
+
       { !sessionToken ? <Auth updateToken={updateToken} /> : <div>
           <Logout clearToken={clearToken} />
+          <UserProfile />
           <Event currentUser={currentUser} />
         </div>}
+
     </div>
   );
 }
