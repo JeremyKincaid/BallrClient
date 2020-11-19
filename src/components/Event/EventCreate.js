@@ -68,18 +68,18 @@ const EventCreate = (props) => {
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="date">Date</Label>
-                    <Input id="date" value={date} onChange={e => setDate(e.target.value)} />
+                    <Input id="date" type="date" value={date} onChange={e => setDate(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="startTime">Start Time</Label>
-                    <Input id="startTime"value={startTime} onChange={e => setStartTime(e.target.value)} />
+                    <Input id="startTime" type="time" value={startTime} onChange={e => setStartTime(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="endTime">End Time</Label>
-                    <Input id="endTime" value={endTime} onChange={e => setEndTime(e.target.value)} />
+                    <Input id="endTime" type="time" value={endTime} onChange={e => setEndTime(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="maxPlayers">Maximum ammount of players(including you)</Label>
+                    <Label htmlFor="maxPlayers">Maximum amount of players(including you)</Label>
                     <Input id="maxPlayers" type="range" min="1" max="50" value={maxPlayers} onChange={e => setMaxPlayers(e.target.value)} />
                     <p>{maxPlayers}</p>
                 </FormGroup>
