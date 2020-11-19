@@ -1,0 +1,16 @@
+.card{
+    border: 2px solid none;
+    border-radius: 15px 15px;
+    width: 400px;
+    height: 500px;
+    background-color: #455a64;
+    color: white;
+    position:relative;
+    top:100px;
+    left:600px;
+    
+}
+
+    h2{
+        color: #c6ff00;
+    }
