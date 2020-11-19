@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; 
 import './Auth.css';
-import {Button, Row, Col} from 'reactstrap'; 
+import {Button, Row, Col, Container} from 'reactstrap'; 
 
 
 const Auth = (props) => {
@@ -57,46 +57,48 @@ const Auth = (props) => {
 
     return (
         <div className="mainDiv">
-            <Row>
-                <Col>
-                    <Row className="logoDiv">
-                        <Col sm="2">
-                            <h2>B</h2>
-                        </Col>
-                        <Col sm="2">
-                            <h2>A</h2>
-                        </Col>
-                        <Col sm="2">
-                            <h2>L</h2>
-                        </Col>
-                        <Col sm="2">
-                            <h2>L</h2>
-                        </Col>
-                        <Col sm="2">
-                            <h2>R</h2>
-                        </Col>
-                    </Row>
-                </Col> 
-            </Row>
-            <Row className="formRow">
-                <form>
-                    <h1 className="login">{login ? 'Login' : 'Signup'}</h1>
-
-                    <label htmlFor="email">Email</label>
-                    <br />
-                    <input id="email" value={email} onChange={e => setEmail(e.target.value)} /> 
-                    <br />
-                    <label htmlFor="password">Password</label>
-                    <br />
-                    <input id="password" value={password} onChange={e => setPassword(e.target.value)} />
-                    <br />
-                    {signupFields()}
-                    <br />
-                    <Button className="btn-primary" onClick={handleSubmit}>Submit</Button>
-                    <br />
-                    <Button type='Button' className="btn-secondary"onClick={loginToggle}>{login ? "Click here to Signup" : "Have a login already? Click here!"}</Button> 
-                </form>
-            </Row>
+            <Container id="Container">
+                <Row>
+                    <Col>
+                        <Row className="logoDiv">
+                            <Col sm="2">
+                                <h2>B</h2>
+                            </Col>
+                            <Col sm="2">
+                                <h2>A</h2>
+                            </Col>
+                            <Col sm="2">
+                                <h2>L</h2>
+                            </Col>
+                            <Col sm="2">
+                                <h2>L</h2>
+                            </Col>
+                            <Col sm="2">
+                                <h2>R</h2>
+                            </Col>
+                        </Row>
+                    </Col> 
+                </Row>
+                <Row className="formRow">
+                    <form>
+                        <h1 className="login">{login ? 'Login' : 'Signup'}</h1>
+    
+                        <label htmlFor="email">Email</label>
+                        <br />
+                        <input id="email" value={email} onChange={e => setEmail(e.target.value)} /> 
+                        <br />
+                        <label htmlFor="password">Password</label>
+                        <br />
+                        <input id="password" value={password} onChange={e => setPassword(e.target.value)} />
+                        <br />
+                        {signupFields()}
+                        <br />
+                        <Button id="btn-primary" onClick={handleSubmit}>Submit</Button>
+                        <br />
+                        <Button type='Button' id="btn-secondary"onClick={loginToggle}>{login ? "Click here to Signup" : "Have a login already? Click here!"}</Button> 
+                    </form>
+                </Row>
+            </Container>
         </div> 
     )
 }

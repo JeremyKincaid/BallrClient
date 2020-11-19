@@ -10,8 +10,8 @@ const Logout = (props) => {
     }
 
     return (
-        <div>
-            <Button className="button" onClick={logout}> Logout </Button> 
+        <div className="mainDiv">
+                <Button id="button" onClick={logout}> Logout </Button> 
         </div>
     )
 }

@@ -1,3 +1,13 @@
+#Container {
+    background-color: #1c313a; 
+    border-radius: 10px; 
+    box-shadow: 0 0 5px black; 
+    border: 1px solid #c6ff00; 
+    padding-bottom: 45px; 
+    margin-top: 1.75em; 
+}
+
+
 .formRow {
     text-align: center; 
     justify-content: center;
@@ -39,22 +49,22 @@ outline: none;
     margin-bottom: 10%;  
 }
 
-.btn-primary {
+#btn-primary {
     margin: 15px; 
     border: solid 1px #fdff58;
-    width: 70px;
-    height: 30px; 
+    width: 80px; 
+    height: 40px; 
     font-size: 17px;
     background-color:  #c6ff00;
     border-radius: 5%;
     color:  #1c313a;
-} 
+}     
 
-.btn-secondary {
+#btn-secondary {
     border: solid 1px #fdff58;
-    margin: 10px; 
-    width: 170px; 
-    height: 50px; 
+    margin: 10px;  
+    width: 185px; 
+    height: 55px; 
     font-size: 16.5px;
     background-color: #c6ff00;
     border-radius: 5%;

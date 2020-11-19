@@ -8,7 +8,7 @@ const Navbars = (props) => {
 
     return (
         <div>
-            <Navbar className="navbar" color="light" light expand="md">
+            <Navbar className="navbar" expand="md">
                 <Nav className="nav" navbar>
                     <Logout clearToken={props.clearToken} />
                 </Nav>
