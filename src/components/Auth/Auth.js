@@ -1,10 +1,12 @@
 import React, { useState } from 'react'; 
+import './Auth.css';
+import {Button, Row, Col, Container} from 'reactstrap'; 
 
 
 const Auth = (props) => {
     const [email, setEmail] = useState(''); 
     const [password, setPassword] = useState(''); 
-    const [rating, setRating] = useState(''); 
+    // const [rating, setRating] = useState(''); 
     const [displayname, setDisplayName] = useState(''); 
 
     const [login, setLogin] = useState(true); 
@@ -21,7 +23,7 @@ const Auth = (props) => {
         const body = { // backend wont use firstName and lastName if the user is signing in 
             email: email, 
             password: password, 
-            rating: rating, 
+            // rating: rating, 
             displayname: displayname
         }
         fetch(url, {
@@ -41,19 +43,11 @@ const Auth = (props) => {
         } else {
             return (
             <div>
-                {/* <label htmlFor="email">Email</label>
-                <br />
-                <input id="email" value={email} onChange={e => setEmail(e.target.value)} />
-                <br />
-                <label htmlFor="password">Password</label>
-                <br />
-                <input id="password" value={password} onChange={e => setPassword(e.target.value)} />
-                <br /> */}
-                <label htmlFor="rating">Rating</label>
+                {/* <label htmlFor="rating">Rating</label>
                 <br />
                 <input id="rating" value={rating} onChange={e => setRating(e.target.value)} />
-                <br />
-                <label htmlFor="displayname">DisplayName</label>
+                <br /> */}
+                <label htmlFor="displayname">Display Name</label>
                 <br />
                 <input id="displayname" value={displayname} onChange={e => setDisplayName(e.target.value)} />
             </div>
@@ -62,24 +56,50 @@ const Auth = (props) => {
     }
 
     return (
-        <div>
-            <form>
-                <h1>{login ? 'Login' : 'Signup'}</h1>
-
-                <label htmlFor="email">Email</label>
-                <br />
-                <input id="email" value={email} onChange={e => setEmail(e.target.value)} /> 
-                <br />
-                <label htmlFor="password">Password</label>
-                <br />
-                <input id="password" value={password} onChange={e => setPassword(e.target.value)} />
-                <br />
-                {signupFields()}
-                <br />
-            <button type='button' onClick={loginToggle}>{login ? "Need a login? Click here!" : "Have a login already? Click here!"}</button>
-                <button onClick={handleSubmit}>Submit</button>
-        </form>
-        </div>
+        <div className="mainDiv">
+            <Container id="Container">
+                <Row>
+                    <Col>
+                        <Row className="logoDiv">
+                            <Col sm="2">
+                                <h2>B</h2>
+                            </Col>
+                            <Col sm="2">
+                                <h2>A</h2>
+                            </Col>
+                            <Col sm="2">
+                                <h2>L</h2>
+                            </Col>
+                            <Col sm="2">
+                                <h2>L</h2>
+                            </Col>
+                            <Col sm="2">
+                                <h2>R</h2>
+                            </Col>
+                        </Row>
+                    </Col> 
+                </Row>
+                <Row className="formRow">
+                    <form>
+                        <h1 className="login">{login ? 'Login' : 'Signup'}</h1>
+    
+                        <label htmlFor="email">Email</label>
+                        <br />
+                        <input id="email" value={email} onChange={e => setEmail(e.target.value)} /> 
+                        <br />
+                        <label htmlFor="password">Password</label>
+                        <br />
+                        <input id="password" value={password} onChange={e => setPassword(e.target.value)} />
+                        <br />
+                        {signupFields()}
+                        <br />
+                        <Button id="btn-primary" onClick={handleSubmit}>Submit</Button>
+                        <br />
+                        <Button type='Button' id="btn-secondary"onClick={loginToggle}>{login ? "Click here to Signup" : "Have a login already? Click here!"}</Button> 
+                    </form>
+                </Row>
+            </Container>
+        </div> 
     )
 }
 
