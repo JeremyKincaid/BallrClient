@@ -4,7 +4,7 @@
     box-shadow: 0 0 5px black; 
     border: 1px solid #c6ff00; 
     padding-bottom: 45px; 
-    margin-top: 1.75em; 
+    margin-top: 1.6em; 
 }
 
 
@@ -45,7 +45,7 @@ outline: none;
 
 .login {
     font-size: 68px;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 10%;  
 }
 
