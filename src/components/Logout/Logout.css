@@ -1,0 +1,15 @@
+.mainDiv {
+    width: 100%;
+    background-color: #455a64; 
+}
+
+#button {
+    margin-top: 2em;
+    margin-left: 87em;
+    width: 80px;
+    height: 40px; 
+    border: solid 3px #fdff58; 
+    font-weight: bold;
+    color: #1c313a;
+    background-color: #c6ff00; 
+}
