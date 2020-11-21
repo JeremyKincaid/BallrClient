@@ -14,7 +14,7 @@ const UserProfile = (props) => {
  
     useEffect(() => {
       fetchUserProfile()
-    }, []
+    }, 
     )
 
     const fetchUserProfile = () => {
