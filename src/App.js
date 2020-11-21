@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Event from './components/Event/Event';
