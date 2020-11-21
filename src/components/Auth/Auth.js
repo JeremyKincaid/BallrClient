@@ -6,7 +6,6 @@ import {Button, Row, Col, Container} from 'reactstrap';
 const Auth = (props) => {
     const [email, setEmail] = useState(''); 
     const [password, setPassword] = useState(''); 
-    // const [rating, setRating] = useState(''); 
     const [displayname, setDisplayName] = useState(''); 
 
     const [login, setLogin] = useState(true); 
@@ -23,7 +22,6 @@ const Auth = (props) => {
         const body = { // backend wont use firstName and lastName if the user is signing in 
             email: email, 
             password: password, 
-            // rating: rating, 
             displayname: displayname
         }
         fetch(url, {
@@ -43,10 +41,6 @@ const Auth = (props) => {
         } else {
             return (
             <div>
-                {/* <label htmlFor="rating">Rating</label>
-                <br />
-                <input id="rating" value={rating} onChange={e => setRating(e.target.value)} />
-                <br /> */}
                 <label htmlFor="displayname">Display Name</label>
                 <br />
                 <input id="displayname" value={displayname} onChange={e => setDisplayName(e.target.value)} />
