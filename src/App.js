@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Event from './components/Event/Event';
 import Auth from './components/Auth/Auth'; 
-import Logout from './components/Logout/Logout'; 
 import Navbar from './components/Navbar/Navbar'; 
 import UserProfile from './components/UserProfile/UserProfile';
 
@@ -49,7 +48,6 @@ const App = () => {
 
 
       { !sessionToken ? <Auth updateToken={updateToken} /> : <div>
-
           <Navbar clearToken={clearToken} />
           <UserProfile sessionToken = {sessionToken}/>
           <Event currentUser={currentUser} />
