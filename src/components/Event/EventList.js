@@ -5,7 +5,7 @@ const EventList = (props) => {
 
     return(
         <div>
-            {props.events.map((evObj, i) => <EventItem ev={evObj} key={i}/>)}
+            {props.events.map((evObj, i) => <EventItem ev={evObj} key={i} currentUser={props.currentUser}/>)}
         </div>
     )
 }

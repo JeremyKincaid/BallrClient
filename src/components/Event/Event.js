@@ -36,7 +36,7 @@ const Event = (props) => {
         return (
             <div>
                 <Button className="secondary-button" onClick={toggleCreate}>Create Event</Button>{' '}
-                <EventList events={events} />
+                <EventList events={events} currentUser={props.currentUser}/>
             </div>
         );
     }
