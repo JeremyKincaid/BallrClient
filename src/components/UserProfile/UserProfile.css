@@ -3,8 +3,8 @@
     border-radius: 15px 15px;
     width: 400px;
     height: 500px;
-    background-color: #455a64;
-    color: white;
+    /* background-color: #455a64; */
+    color: black;
     position:relative;
     top:100px;
     left:600px;
@@ -12,5 +12,15 @@
 }
 
     h2{
-        color: #c6ff00;
+        color: black;
+    }
+
+    .h6 {
+        color: black;
+    }
+    
+    .mb-2{
+        position: relative;
+        top: 5px;
+        bottom:10px;
     }
