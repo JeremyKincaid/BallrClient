@@ -12,17 +12,17 @@ import AddFriend from './AddFriend';
 const UserProfile = (props) => {
     const [userProfile, setUserProfile] = useState('');
  
-    useEffect(() => {
-      fetchUserProfile()
-    }, 
-    )
+//     useEffect(() => {
+//       fetchUserProfile()
+//     }, 
+//     )
 
-    const fetchUserProfile = () => {
-    fetch('http://localhost:3000/user/id', {
-      method: 'GET'
-    }). then ( r=> r.json())
-    .then(rArr => setUserProfile(rArr))
-}
+//     const fetchUserProfile = () => {
+//     fetch('http://localhost:3000/user/id', {
+//       method: 'GET'
+//     }). then ( r=> r.json())
+//     .then(rArr => setUserProfile(rArr))
+// }
 
         return (
             <div>
