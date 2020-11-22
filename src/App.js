@@ -38,6 +38,7 @@ const App = () => {
 
   const clearToken = () => {
     setSessionToken(undefined)
+    setCurrentUser(undefined)
     localStorage.clear()
   }
 
