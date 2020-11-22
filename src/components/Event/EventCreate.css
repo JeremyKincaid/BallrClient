@@ -1,0 +1,38 @@
+.modalFooter > * {
+    margin: .75rem .25rem 1rem;
+
+}
+
+.modalFooter {
+    background-color: #1c313a;
+}
+
+.modalHeader {
+    background-color: #1c313a;
+}
+
+.modalBody {
+    background-color: #1c313a;
+}
+
+.eventForm {
+    top: 0;
+    bottom: 0;
+}
+
+p {
+    color: white;
+}
+
+.submitEventBtn {
+    border: solid 1px #fdff58 !important;
+    background-color:  #c6ff00 !important;
+    color:  #1c313a !important;
+}
+
+.submitEventBtn:active, 
+.submitEventBtn:focus
+{
+    outline-offset: 0px !important;
+    outline: none !important;
+}

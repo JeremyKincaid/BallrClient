@@ -33,16 +33,17 @@ label {
 }
 
 input {
-    border: solid 2.5px  #c6ff00; 
+    border: solid 2.5px  #c6ff00 !important; 
     padding: 2px; 
-    background-color: #455a64;
+    color: white !important; 
+
+    background-color: #455a64 !important;
 }
 
 input:focus, textarea:focus
 {
 outline-offset: 0px;
 outline: none;
-color: white; 
 }
 
 .login {

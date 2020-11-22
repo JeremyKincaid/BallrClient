@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import EventEdit from './EventEdit';
 import './EventItem.css';
-import { Button } from 'reactstrap';
+import { Button, Modal, Col } from 'reactstrap';
 
 
 const EventItem = (props) => {
 
     const [hostName, setHostName] = useState();
     const [isSignedUp, setIsSignedUp] = useState(false);
+    const [modal, setModal] = useState(false);
 
     useEffect(
         () => {
@@ -19,6 +21,10 @@ const EventItem = (props) => {
             getSignedEvents()
         }
     )
+
+    const toggle = () => {
+        setModal(!modal);
+    }
 
     const fetchHostName = () => {
         fetch(`http://localhost:3000/user/${props.ev.createdById}`, {
@@ -89,55 +95,88 @@ const EventItem = (props) => {
             console.log(rArr)
             rArr.length > 0 ? setIsSignedUp(true) : setIsSignedUp(false);
         })
+        .catch(err => console.log(err))
+
+    }
+
+    const deleteEvent = async () => {
+        const response = await fetch(`http://localhost:3000/event/delete/${props.ev.id}`, {
+            method: 'DELETE'
+        })
+        const json = await response.json();
+        console.log(json);
+        props.fetchEvents();
+    }
+
+    const deleteSignUp = () => {
+        fetch(`http://localhost:3000/event/deleteSignup/${props.currentUser}/${props.ev.id}`, {
+            method: 'DELETE'
+        })
+        .then(r => r.json())
+        .then(rObj => console.log(rObj))
+        .catch(err => console.log(err))
+        props.fetchEvents();
     }
 
 
     if (props.ev.createdById == props.currentUser) {
         return(
-            <div className="ev-card">
-                <h1>Your Event</h1>
-                <h3>{props.ev.name}</h3>
-                <p>Sport: {props.ev.sport}.</p>
-                <p>Location: {props.ev.location}</p>
-                <p>Date: {props.ev.date}</p>
-                <p>Starts: {props.ev.startTime}</p>
-                <p>Ends: {props.ev.endTime}</p>
-                <p>{props.ev.currentPlayers} out of {props.ev.maxPlayers}</p>
-                <p>Host: {hostName}</p>
-                
-                <Button className="secondary-button">Edit</Button>{' '}
-            </div>
+            <Col>
+                <div className="ev-card">
+                    <h1>Your Event</h1>
+                    <h3>{props.ev.name}</h3>
+                    <p>Sport: {props.ev.sport}</p>
+                    <p>Location: {props.ev.location}</p>
+                    <p>Date: {props.ev.date}</p>
+                    <p>Starts: {props.ev.startTime}</p>
+                    <p>Ends: {props.ev.endTime}</p>
+                    <p>{props.ev.currentPlayers} out of {props.ev.maxPlayers}</p>
+                    <p>Host: {hostName}</p>
+                    
+                    <Modal isOpen={modal} className="createModal">
+                        <EventEdit fetchEvents={props.fetchEvents} ev={props.ev} toggle={toggle} currentUser={props.currentUser} />
+                    </Modal>
+                    <Button className="deleteEvent" onClick={deleteEvent}>Delete Event</Button>
+                    <Button className="secondary-button" onClick={toggle}>Edit</Button>{' '}
+                </div>
+            </Col>
         )
     } else if (isSignedUp === true) {
         return(
-            <div className="ev-card">
-                <h1>Your Event</h1>
-                <h3>{props.ev.name}</h3>
-                <p>Sport: {props.ev.sport}.</p>
-                <p>Location: {props.ev.location}</p>
-                <p>Date: {props.ev.date}</p>
-                <p>Starts: {props.ev.startTime}</p>
-                <p>Ends: {props.ev.endTime}</p>
-                <p>{props.ev.currentPlayers} out of {props.ev.maxPlayers}</p>
-                <p>Host: {hostName}</p>
-                
-                <Button className="secondary-button">Cancel Sign up</Button>{' '}
-            </div>
+            <Col>
+                <div className="ev-card">
+                    <h3>You're signed up</h3>
+                    <br/>
+                    <h3>{props.ev.name}</h3>
+                    <p>Sport: {props.ev.sport}</p>
+                    <p>Location: {props.ev.location}</p>
+                    <p>Date: {props.ev.date}</p>
+                    <p>Starts: {props.ev.startTime}</p>
+                    <p>Ends: {props.ev.endTime}</p>
+                    <p>{props.ev.currentPlayers} out of {props.ev.maxPlayers}</p>
+                    <p>Host: {hostName}</p>
+                    
+                    <Button className="secondary-button" onClick={deleteSignUp}>Cancel Sign up</Button>{' '}
+                </div>
+            </Col>
         )
     } else {
         return(
-            <div className="ev-card">
-                <h3>{props.ev.name}</h3>
-                <p>Sport: {props.ev.sport}.</p>
-                <p>Location: {props.ev.location}</p>
-                <p>Date: {props.ev.date}</p>
-                <p>Starts: {props.ev.startTime}</p>
-                <p>Ends: {props.ev.endTime}</p>
-                <p>{props.ev.currentPlayers} out of {props.ev.maxPlayers}</p>
-                <p>Host: {hostName}</p>
-                
-                <Button className="secondary-button" onClick={eventSignUp}>Sign up</Button>{' '}
-            </div>
+            <Col>
+                <div className="ev-card">
+                    <h3>{props.ev.name}</h3>
+                    <p>Sport: {props.ev.sport}</p>
+                    <p>Location: {props.ev.location}</p>
+                    <p>Date: {props.ev.date}</p>
+                    <p>Starts: {props.ev.startTime}</p>
+                    <p>Ends: {props.ev.endTime}</p>
+                    <p>{props.ev.currentPlayers} out of {props.ev.maxPlayers}</p>
+                    <p>Host: {hostName}</p>
+    
+    
+                    <Button className="secondary-button" onClick={eventSignUp}>Sign up</Button>{' '}
+                </div>
+            </Col>
         )
     }
 }
