@@ -7,9 +7,9 @@ img{
 
 .loadButton{
     position: relative;
-    top:-30px;
+    top:-35px;
     bottom: 50px;
-    left: 110px;
+    left: 112px;
 }
 
 form{
@@ -17,3 +17,4 @@ form{
     top: 20px;
     bottom:10px;
 }
+
