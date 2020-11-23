@@ -24,3 +24,14 @@
         top: 5px;
         bottom:10px;
     }
+
+.profilePic {
+    max-width: 6em;
+    max-height: 6em;
+}
+
+.profileContainer {
+    background-color: #1c313a;
+    margin: 2em 0;
+    padding: 2em;
+}

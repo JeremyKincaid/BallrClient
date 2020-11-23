@@ -49,7 +49,7 @@ const App = () => {
 
       { !sessionToken ? <Auth updateToken={updateToken} /> : <div>
           <Navbar clearToken={clearToken} />
-          <UserProfile sessionToken = {sessionToken}/>
+          <UserProfile currentUser={currentUser} sessionToken = {sessionToken}/>
           <Event currentUser={currentUser} />
         </div>}
 
