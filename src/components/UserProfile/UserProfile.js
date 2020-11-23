@@ -60,9 +60,9 @@ const UserProfile = (props) => {
 
 return (
   <div className="userProfile">
-    <Card className="card">
-      <CardBody>
-        <CardTitle tag="h3">BALLR</CardTitle>
+    <Card id="card">
+      <CardBody id="cardBody">
+        <CardTitle id="ballrName" tag="h3">B A L L R</CardTitle>
 
         <CardSubtitle tag="h5" className="mb-2 text-muted">{`DisplayName:${displayName}`}</CardSubtitle>
         <ImgUpload sessionToken={props.sessionToken} />
