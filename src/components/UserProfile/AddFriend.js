@@ -23,7 +23,7 @@ const fetchAddFriend = () => {
     return (
         <div>
             <form>
-            <Button className="friendButton" >Add Me</Button>{' '}
+                <Button id="Button">Add Me</Button>{' '}
             </form>
         </div>
     )

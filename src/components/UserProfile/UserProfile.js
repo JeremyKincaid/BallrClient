@@ -60,7 +60,7 @@ const UserProfile = (props) => {
 
 return (
   <div className="userProfile">
-    <Card>
+    <Card className="card">
       <CardBody>
         <CardTitle tag="h3">BALLR</CardTitle>
 
