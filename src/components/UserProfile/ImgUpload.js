@@ -5,7 +5,7 @@ const CLOUD_URL = "https://api.cloudinary.com/v1_1/dc7cdwbh0/image/upload"
 
 const ImgUpload = (props) => {
    
- const [avUrl, setAvUrl] = useState(false)
+ const [avUrl, setAvUrl] = useState("https://res.cloudinary.com/dc7cdwbh0/image/upload/v1605829363/BallrApp/yysv5rrbggtxxkdoa558.png")
 
 
 
@@ -39,7 +39,7 @@ const ImgUpload = (props) => {
 
     console.log(results)
 
-    setAvUrl(results.img)
+    setAvUrl(results.secure_url)
 
     const final = await (await fetch('http://localhost:3000/user/imageset', {
         method: 'PUT',
@@ -57,9 +57,9 @@ const ImgUpload = (props) => {
         <div>
             <form encType="multipart/form-data" onSubmit={handleSubmit}>
                 <input id="file-input" type="file" />
-                <button className= 'loadButton' >Upload Pic!</button>
+                <button className= 'loadButton' >Upload!</button>
             </form>
-            <img src = {avUrl ? setAvUrl : "https://res.cloudinary.com/dc7cdwbh0/image/upload/v1605829363/BallrApp/yysv5rrbggtxxkdoa558.png"} alt ="avatar" />
+            <img src = {avUrl} alt ="avatar" />
         </div>
     )
 }
