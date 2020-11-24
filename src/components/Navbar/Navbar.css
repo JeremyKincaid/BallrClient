@@ -1,13 +1,22 @@
+#mainDiv {
+    background-color: #333333;
+}  
+
 .navbar {
-    background-color: #445963;
-    height: 50px; 
+    background-color: #333333;
     margin-top: -1em; 
     width: 100%;
 }
 
-.col-sm-2 h2 {
+/* .col-sm-2 h2 {
     margin-left: 0.95em;  
     padding-top: -10px; 
+} */
+
+#ballr {
+    letter-spacing: 0.8em;
+    color: #c6ff00;
+    padding-top: 20px;
 }
 
 

@@ -1,38 +1,45 @@
 import React from 'react'; 
-import { Navbar, Nav, Container, Row, Col} from 'reactstrap'; 
+import { Navbar, NavbarText, Nav, NavItem, Container, Row, Col} from 'reactstrap'; 
 import Logout from '../Logout/Logout'; 
 import './Navbar.css'; 
 
 const Navbars = (props) => {
-
-
     return (
+        <div id="mainDiv">
             <Navbar className="navbar" expand="md">
-                <Nav className="nav" navbar>
-                    <Logout clearToken={props.clearToken} />
+                <Nav>
+                    <NavItem>   
+                        <NavbarText id="ballr">
+                            BALLR
+                        </NavbarText>
+                    </NavItem>
+                    <NavItem>
+                        <Logout clearToken={props.clearToken} />
+                    </NavItem>
                 </Nav>
-            </Navbar>
-            <Container>
+            </Navbar>  
+            {/* <Container> 
                 <Row>
-                        <Row>
+                        <Row> 
                             <Col sm="2">
-                                <h2>B</h2>
+                               B
+                            </Col> 
+                            <Col sm="2">
+                               A
                             </Col>
                             <Col sm="2">
-                                <h2>A</h2>
+                                L
                             </Col>
                             <Col sm="2">
-                                <h2>L</h2>
+                                L
                             </Col>
                             <Col sm="2">
-                                <h2>L</h2>
-                            </Col>
-                            <Col sm="2">
-                                <h2>R</h2>
+                                R
                             </Col>
                         </Row>
                 </Row>
-            </Container>
+            </Container> */}
+        </div>
     )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'; 
-import {Button} from 'reactstrap'; 
+import {Button, Nav, NavLink, NavItem} from 'reactstrap'; 
 import './Logout.css'
 
 const Logout = (props) => {
@@ -10,9 +10,12 @@ const Logout = (props) => {
     }
 
     return (
-        <div className="mainDiv">
-                <Button id="button" onClick={logout}> Logout </Button> 
-        </div>
+        <div className="mainDiv"> 
+            <NavLink id="logout" onClick={logout}>
+                Logout  
+            </NavLink>
+                {/* <Button id="button" onClick={logout}> Logout </Button>  */}
+        </div> 
     )
 }
 
