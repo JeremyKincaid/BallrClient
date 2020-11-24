@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './UserProfile.css';
-import {
-  Card, CardText, CardBody,
-  CardTitle, CardSubtitle
-} from 'reactstrap';
+
+import { Row, Col, Container, Button, Modal } from 'reactstrap';
+import UserEdit from './UserEdit';
 import ImgUpload from './ImgUpload';
 import AddFriend from './AddFriend';
 
@@ -12,69 +11,51 @@ import AddFriend from './AddFriend';
 
 const UserProfile = (props) => {
 
-
-  const [displayName, setDisplayName] = useState('')
-  const [rating, setRating] = useState('')
-  const [description, setDescription] = useState('')
-
-
-  // const newCard = () => {
-  //   setDisplayName(false)
-  //   setRating(true)
-  //   setDescription(false)
-  // }
+  const [user, setUser] = useState('');
+  const [modal, setModal] = useState(false);
 
   useEffect(
     () => {
-      fetchUserProfile()
+        fetchUser()
     }, []
   )
-  let LID = localStorage.getItem('userID')
-  const fetchUserProfile = async () => {
-    let res = await fetch(`http://localhost:3000/user/${LID}`)
-    let json = await res.json()
-    console.log(json)
-    setDisplayName(json.user.displayname)
 
-    setRating(json.rating)
-
-    setDescription(json.description)
-
-  
-    // fetch(`http://localhost:3000/user/${LID}`, {
-    //   method: 'GET'
-    // }).then (r => r.json())
-    // .then( rArr =>{
-
-    // console.log(rArr)
-
-    // if(rArr !== undefined){
-
-    // }
-
-
-
+  const toggle = () => {
+    setModal(!modal);
   }
 
+  const fetchUser = () => {
+    fetch(`http://localhost:3000/user/${props.currentUser}`, {
+      method: 'GET'
+    }).then(r => r.json())
+      .then(rObj => setUser(rObj.user))
+      .catch(err => console.log(err))
+    }
 
+  return (
+    <Container className="profileContainer" fluid={true}>
+      <Row>
+        <Col>
+          <img className="profilePic" src = {user.profilepic ? user.profilepic : "https://res.cloudinary.com/dc7cdwbh0/image/upload/v1605829363/BallrApp/yysv5rrbggtxxkdoa558.png"} alt ="avatar" />
 
-return (
-  <div className="userProfile">
-    <Card id="card">
-      <CardBody id="cardBody">
-        <CardTitle id="ballrName" tag="h3">B A L L R</CardTitle>
+        </Col>  
+        <Col>
+        <h2>{ user.displayname }</h2>
+        </Col>
 
-        <CardSubtitle tag="h5" className="mb-2 text-muted">{`DisplayName:${displayName}`}</CardSubtitle>
-        <ImgUpload sessionToken={props.sessionToken} />
-        <br />
-        <CardText>"Write something amazing about yourself"</CardText>
+          {/* <ImgUpload sessionToken={props.sessionToken} /> */}
+        <Col>
+        <Button onClick={toggle}>Edit Profile</Button>
 
-        <AddFriend />
-      </CardBody>
-    </Card>
-  </div>
-) 
-        }
+        </Col>
+        {/* <AddFriend /> */}
+      </Row>
+      <Modal isOpen={modal} className="createModal">
+          <UserEdit sessionToken = {props.sessionToken} user={user} toggle={toggle} />
+      </Modal>
 
+    </Container>
+  )
+}
 
 export default UserProfile;

@@ -4,8 +4,6 @@ import Logout from '../Logout/Logout';
 import './Navbar.css'; 
 
 const Navbars = (props) => {
-
-
     return (
         <div>
             <Navbar className="navbar" expand="md">
