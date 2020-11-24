@@ -14,3 +14,9 @@ h2 {
     color: white;
 }
 
+.editButton {
+    border: solid 1px #fdff58 !important;
+    background-color:  #c6ff00 !important;
+    color:  #1c313a !important;
+    margin: 28px; 
+}

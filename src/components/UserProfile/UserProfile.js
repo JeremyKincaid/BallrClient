@@ -46,7 +46,7 @@ const UserProfile = (props) => {
 
           {/* <ImgUpload sessionToken={props.sessionToken} /> */}
         <Col>
-        <Button onClick={toggle}>Edit Profile</Button>
+        <Button className="editButton" onClick={toggle}>Edit Profile</Button>
 
         </Col>
         {/* <AddFriend /> */}
