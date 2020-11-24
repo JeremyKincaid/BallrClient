@@ -15,25 +15,23 @@ const Navbars = (props) => {
             </Navbar>
             <Container>
                 <Row>
-                    <Col>
-                        <Row>
+                        <Row> 
                             <Col sm="2">
-                                <h2>B</h2>
+                               B
                             </Col>
                             <Col sm="2">
-                                <h2>A</h2>
+                               A
                             </Col>
                             <Col sm="2">
-                                <h2>L</h2>
+                                L
                             </Col>
                             <Col sm="2">
-                                <h2>L</h2>
+                                L
                             </Col>
                             <Col sm="2">
-                                <h2>R</h2>
+                                R
                             </Col>
                         </Row>
-                    </Col>
                 </Row>
             </Container>
         </div>
