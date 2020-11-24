@@ -5,3 +5,9 @@
     width: 100%;
 }
 
+.col-sm-2 h2 {
+    margin-left: 0.95em;  
+    padding-top: -10px; 
+}
+
+

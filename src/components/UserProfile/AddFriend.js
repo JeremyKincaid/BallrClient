@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import './AddFriend.css';
 import{ Button } from 'reactstrap';
 
 const AddFriend = (props) => {
@@ -6,7 +7,7 @@ const [addFriend, setAddFriend] = useState('');
 
 useEffect(() => {
     fetchAddFriend()
-}, []
+}, 
 )
 
 const fetchAddFriend = () => {
@@ -22,7 +23,7 @@ const fetchAddFriend = () => {
     return (
         <div>
             <form>
-            <Button className="friendButton" >Add Me</Button>{' '}
+                <Button id="Button">Add Me</Button>{' '}
             </form>
         </div>
     )

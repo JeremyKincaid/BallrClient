@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './UserProfile.css';
+
 import { Row, Col, Container, Button, Modal } from 'reactstrap';
 import UserEdit from './UserEdit';
 import ImgUpload from './ImgUpload';
 import AddFriend from './AddFriend';
 
+
 // User Profile need displayname of users?
 
 const UserProfile = (props) => {
+
   const [user, setUser] = useState('');
   const [modal, setModal] = useState(false);
 
