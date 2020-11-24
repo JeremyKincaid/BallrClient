@@ -1,40 +1,46 @@
 import React from 'react'; 
-import { Navbar, Nav, Container, Row, Col} from 'reactstrap'; 
+import { Navbar, NavbarText, Nav, NavItem, Container, Row, Col} from 'reactstrap'; 
 import Logout from '../Logout/Logout'; 
 import './Navbar.css'; 
 
 const Navbars = (props) => {
-
-
     return (
-            <div>
-                <Navbar className="navbar" expand="md">
-                    <Nav className="nav" navbar>
+        <div id="mainDiv">
+            <Navbar className="navbar" expand="md">
+                <Nav>
+                    <NavItem>   
+                        <NavbarText id="ballr">
+                            BALLR
+                        </NavbarText>
+                    </NavItem>
+                    <NavItem>
                         <Logout clearToken={props.clearToken} />
-                    </Nav>
-                </Navbar>
-                <Container>
-                    <Row>
-                            <Row>
-                                <Col sm="2">
-                                    <h2>B</h2>
-                                </Col>
-                                <Col sm="2">
-                                    <h2>A</h2>
-                                </Col>
-                                <Col sm="2">
-                                    <h2>L</h2>
-                                </Col>
-                                <Col sm="2">
-                                    <h2>L</h2>
-                                </Col>
-                                <Col sm="2">
-                                    <h2>R</h2>
-                                </Col>
-                            </Row>
-                    </Row>
-                </Container>
-            </div>
+                    </NavItem>
+                </Nav>
+            </Navbar>  
+            {/* <Container> 
+                <Row>
+                        <Row> 
+                            <Col sm="2">
+                               B
+                            </Col> 
+                            <Col sm="2">
+                               A
+                            </Col>
+                            <Col sm="2">
+                                L
+                            </Col>
+                            <Col sm="2">
+                                L
+                            </Col>
+                            <Col sm="2">
+                                R
+                            </Col>
+                        </Row>
+                </Row>
+            </Container> */}
+        </div>
+
     )
 }
 

@@ -41,6 +41,7 @@ const UserProfile = (props) => {
         </Col>  
         <Col>
         <h2>{ user.displayname }</h2>
+        <p>{ user.description }</p>
         </Col>
 
           {/* <ImgUpload sessionToken={props.sessionToken} /> */}

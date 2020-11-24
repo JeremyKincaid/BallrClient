@@ -6,10 +6,9 @@
 
 .profileContainer {
     background-color: #1c313a;
-    margin: 2em 0;
     padding: 2em;
+    margin: 0 0 2em 0; 
 }
-
 
 h2 {
     color: white;
