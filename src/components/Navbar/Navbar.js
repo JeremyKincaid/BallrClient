@@ -7,7 +7,6 @@ const Navbars = (props) => {
 
 
     return (
-        <div>
             <Navbar className="navbar" expand="md">
                 <Nav className="nav" navbar>
                     <Logout clearToken={props.clearToken} />
@@ -15,7 +14,6 @@ const Navbars = (props) => {
             </Navbar>
             <Container>
                 <Row>
-                    <Col>
                         <Row>
                             <Col sm="2">
                                 <h2>B</h2>
@@ -33,10 +31,8 @@ const Navbars = (props) => {
                                 <h2>R</h2>
                             </Col>
                         </Row>
-                    </Col>
                 </Row>
             </Container>
-        </div>
     )
 }
 

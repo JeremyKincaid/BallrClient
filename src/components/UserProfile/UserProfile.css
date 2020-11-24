@@ -1,38 +1,17 @@
-#card{
-    border: 2px solid #fdff58;
-    border-radius: 15px 15px;
-    width: 400px;
-    height: 500px;
-    /* background-color: #455a64; */
-    color: #1c313a;
-    position:relative;
-    top:100px;
-    left:600px;
-    margin-left: -2em; 
-    margin-top: -5em; 
+
+.profilePic {
+    max-width: 6em;
+    max-height: 6em;
 }
 
-    h2{
-        color: black;
-    }
-
-    .h6 {
-        color: black;
-    }
-    
-    .mb-2{
-        position: relative;
-        top: 5px;
-        bottom:10px;
-    }
-
-#ballrName {
-    text-shadow:
-		-0.25px -0.25px 0 #90cc00,
-		0.25px -0.25px 0 #90cc00,
-		-0.25px 0.25px 0 #90cc00,
-        0.25px 0.25px 0 #90cc00;
-    padding-bottom: 5px; 
+.profileContainer {
+    background-color: #1c313a;
+    margin: 2em 0;
+    padding: 2em;
 }
 
+
+h2 {
+    color: white;
+}
 
