@@ -1,5 +1,5 @@
 import React from 'react'; 
-import {Button, Nav, NavLink, NavItem} from 'reactstrap'; 
+import { NavLink } from 'reactstrap'; 
 import './Logout.css'
 
 const Logout = (props) => {

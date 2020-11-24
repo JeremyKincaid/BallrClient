@@ -1,6 +1,7 @@
 import React, { useState } from 'react'; 
 import './Auth.css';
 import {Button, Row, Col, Container} from 'reactstrap'; 
+import apiurl from '../../environment'; 
 
 
 const Auth = (props) => {
@@ -18,7 +19,7 @@ const Auth = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault(); 
 
-        const url = `http://localhost:3000/user/${login ? 'signin' : 'signup'}` // we hit signin if login is true 
+        const url = `${apiurl}/user/${login ? 'signin' : 'signup'}` // we hit signin if login is true 
         const body = { // backend wont use firstName and lastName if the user is signing in 
             email: email, 
             password: password, 

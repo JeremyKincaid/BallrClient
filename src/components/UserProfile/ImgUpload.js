@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './ImgUpload.css';
+import apiurl from '../../environment'; 
 
 const CLOUD_URL = "https://api.cloudinary.com/v1_1/dc7cdwbh0/image/upload"
 
@@ -12,7 +13,7 @@ const ImgUpload = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-    const response = await fetch('http://localhost:3000/user/cloudsign', {
+    const response = await fetch(`${apiurl}/user/cloudsign`, {
         method: 'GET',
         headers: {
             'Authorization': props.sessionToken
@@ -41,7 +42,7 @@ const ImgUpload = (props) => {
 
     setAvUrl(results.secure_url)
 
-    const final = await (await fetch('http://localhost:3000/user/imageset', {
+    const final = await (await fetch(`${apiurl}/user/imageset`, {
         method: 'PUT',
         headers:{
         'Authorization': props.sessionToken,

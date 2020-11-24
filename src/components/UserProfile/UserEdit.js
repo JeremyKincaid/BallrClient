@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input, ModalHeader, ModalBody, ModalFooter, InputGroupAddon, InputGroup } from 'reactstrap';
+import apiurl from '../../environment';
 
 const CLOUD_URL = "https://api.cloudinary.com/v1_1/dc7cdwbh0/image/upload"
 
@@ -19,7 +20,7 @@ const UserEdit = (props) => {
     const uploadPic = async (e) => {
         e.preventDefault()
 
-        const response = await fetch('http://localhost:3000/user/cloudsign', {
+        const response = await fetch(`${apiurl}/user/cloudsign`, {
             method: 'GET',
             headers: {
                 'Authorization': props.sessionToken
@@ -51,7 +52,7 @@ const UserEdit = (props) => {
 
         setProfilePic(results.secure_url)
 
-        const final = await (await fetch('http://localhost:3000/user/imageset', {
+        const final = await (await fetch(`${apiurl}/user/imageset`, {
             method: 'PUT',
             headers:{
             'Authorization': props.sessionToken,
@@ -73,7 +74,7 @@ const UserEdit = (props) => {
             location: profilePic,
         }
 
-        fetch(`http://localhost:3000/user/edit/${props.user.id}`, {
+        fetch(`${apiurl}/user/edit/${props.user.id}`, {
             method: 'PUT',
 
             headers: {

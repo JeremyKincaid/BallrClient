@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import './EventCreate.css';
-
+import apiurl from '../../environment'; 
 const EventCreate = (props) => {
 
     const [name, setName] = useState('');
@@ -37,7 +37,7 @@ const EventCreate = (props) => {
             maxPlayers: maxPlayers,
             createdById: props.currentUser
         }
-        fetch('http://localhost:3000/event/new', {
+        fetch(`${apiurl}/event/new`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

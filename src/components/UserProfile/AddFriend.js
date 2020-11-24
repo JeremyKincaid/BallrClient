@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import './AddFriend.css';
 import{ Button } from 'reactstrap';
+import apiurl from '../../environment';
 
 const AddFriend = (props) => {
 const [addFriend, setAddFriend] = useState('');
@@ -11,7 +12,7 @@ useEffect(() => {
 )
 
 const fetchAddFriend = () => {
-    fetch('http://localhost:3000/user/search/displayname', {
+    fetch(`${apiurl}/user/search/displayname`, {
         method: 'GET',
         headers: {
             'Authorization': props.sessionToken

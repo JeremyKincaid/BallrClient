@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import apiurl from '../../environment';
 
 const EventEdit = (props) => {
 
@@ -29,7 +30,7 @@ const EventEdit = (props) => {
             maxPlayers: maxPlayers,
             createdById: props.currentUser
         }
-        fetch(`http://localhost:3000/event/edit/${props.ev.id}`, {
+        fetch(`${apiurl}/event/edit/${props.ev.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

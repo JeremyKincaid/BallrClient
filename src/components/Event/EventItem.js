@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import EventEdit from './EventEdit';
 import './EventItem.css';
 import { Button, Modal, Col } from 'reactstrap';
+import apiurl from '../../environment';
 
 
 const EventItem = (props) => {
@@ -27,7 +28,7 @@ const EventItem = (props) => {
     }
 
     const fetchHostName = () => {
-        fetch(`http://localhost:3000/user/${props.ev.createdById}`, {
+        fetch(`${apiurl}/user/${props.ev.createdById}`, {
             method: 'GET'
         }).then(r => r.json())
           .then(rObj => {
@@ -44,7 +45,7 @@ const EventItem = (props) => {
 
         let players;
 
-        const response1 = await fetch('http://localhost:3000/event/signup/', {
+        const response1 = await fetch(`${apiurl}/event/signup/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -55,7 +56,7 @@ const EventItem = (props) => {
         const json1 = await response1.json();
         console.log(json1);
 
-        const response2 = await fetch(`http://localhost:3000/event/findEvents/${ props.ev.id }`, {
+        const response2 = await fetch(`${apiurl}/event/findEvents/${ props.ev.id }`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -69,7 +70,7 @@ const EventItem = (props) => {
             currentPlayers: players++
         }
 
-        fetch(`http://localhost:3000/event/updatePlayers/${ props.ev.id }`, {
+        fetch(`${apiurl}/event/updatePlayers/${ props.ev.id }`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -84,7 +85,7 @@ const EventItem = (props) => {
     }
 
     const getSignedEvents = () => {
-        fetch(`http://localhost:3000/event/findMyEvents/${props.ev.id}/${props.currentUser}`, {
+        fetch(`${apiurl}/event/findMyEvents/${props.ev.id}/${props.currentUser}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -100,7 +101,7 @@ const EventItem = (props) => {
     }
 
     const deleteEvent = async () => {
-        const response = await fetch(`http://localhost:3000/event/delete/${props.ev.id}`, {
+        const response = await fetch(`${apiurl}/event/delete/${props.ev.id}`, {
             method: 'DELETE'
         })
         const json = await response.json();
@@ -109,7 +110,7 @@ const EventItem = (props) => {
     }
 
     const deleteSignUp = () => {
-        fetch(`http://localhost:3000/event/deleteSignup/${props.currentUser}/${props.ev.id}`, {
+        fetch(`${apiurl}/event/deleteSignup/${props.currentUser}/${props.ev.id}`, {
             method: 'DELETE'
         })
         .then(r => r.json())

@@ -5,6 +5,7 @@ import { Row, Col, Container, Button, Modal } from 'reactstrap';
 import UserEdit from './UserEdit';
 import ImgUpload from './ImgUpload';
 import AddFriend from './AddFriend';
+import apiurl from '../../environment';
 
 
 // User Profile need displayname of users?
@@ -25,7 +26,7 @@ const UserProfile = (props) => {
   }
 
   const fetchUser = () => {
-    fetch(`http://localhost:3000/user/${props.currentUser}`, {
+    fetch(`${apiurl}/user/${props.currentUser}`, {
       method: 'GET'
     }).then(r => r.json())
       .then(rObj => setUser(rObj.user))

@@ -3,6 +3,7 @@ import EventList from './EventList';
 import EventCreate from './EventCreate';
 import { Button, Modal } from 'reactstrap';
 import "./Event.css";
+import apiurl from '../../environment'; 
 
 
 const Event = (props) => {
@@ -21,7 +22,7 @@ const Event = (props) => {
     }
 
     const fetchEvents = () => {
-        fetch('http://localhost:3000/event', {
+        fetch(`${apiurl}/event`, {
             method: 'GET'
         }).then(r => r.json())
           .then(rArr => setEvents(rArr))
