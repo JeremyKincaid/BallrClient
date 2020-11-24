@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './UserProfile.css';
-import { Row, Col, Container } from 'reactstrap';
+import { Row, Col, Container, Button, Modal } from 'reactstrap';
+import UserEdit from './UserEdit';
 import ImgUpload from './ImgUpload';
 import AddFriend from './AddFriend';
 
@@ -8,12 +9,17 @@ import AddFriend from './AddFriend';
 
 const UserProfile = (props) => {
   const [user, setUser] = useState('');
+  const [modal, setModal] = useState(false);
 
   useEffect(
     () => {
         fetchUser()
     }, []
   )
+
+  const toggle = () => {
+    setModal(!modal);
+  }
 
   const fetchUser = () => {
     fetch(`http://localhost:3000/user/${props.currentUser}`, {
@@ -27,16 +33,24 @@ const UserProfile = (props) => {
     <Container className="profileContainer" fluid={true}>
       <Row>
         <Col>
-        <img className="profilePic" src = {user.profilepic ? user.profilepic : "https://res.cloudinary.com/dc7cdwbh0/image/upload/v1605829363/BallrApp/yysv5rrbggtxxkdoa558.png"} alt ="avatar" />
+          <img className="profilePic" src = {user.profilepic ? user.profilepic : "https://res.cloudinary.com/dc7cdwbh0/image/upload/v1605829363/BallrApp/yysv5rrbggtxxkdoa558.png"} alt ="avatar" />
 
         </Col>  
         <Col>
         <h2>{ user.displayname }</h2>
-          {/* <ImgUpload sessionToken={props.sessionToken} /> */}
-          <br />
-          <AddFriend />
         </Col>
+
+          {/* <ImgUpload sessionToken={props.sessionToken} /> */}
+        <Col>
+        <Button onClick={toggle}>Edit Profile</Button>
+
+        </Col>
+        {/* <AddFriend /> */}
       </Row>
+      <Modal isOpen={modal} className="createModal">
+          <UserEdit sessionToken = {props.sessionToken} user={user} toggle={toggle} />
+      </Modal>
+
     </Container>
   )
 }

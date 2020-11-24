@@ -6,10 +6,7 @@ img{
 }
 
 .loadButton{
-    position: relative;
-    top:-30px;
-    bottom: 50px;
-    left: 110px;
+    margin: .5em auto;
 }
 
 form{
