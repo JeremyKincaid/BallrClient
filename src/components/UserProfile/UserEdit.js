@@ -72,7 +72,7 @@ const UserEdit = (props) => {
             description: description,
             location: profilePic,
         }
-        fetch('http://localhost:3000/event/new', {
+        fetch(`http://localhost:3000/user/edit/${props.user.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
