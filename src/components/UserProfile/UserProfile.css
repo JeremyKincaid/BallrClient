@@ -1,16 +1,34 @@
-.card{
-    border: 2px solid none;
-    border-radius: 15px 15px;
-    width: 400px;
-    height: 500px;
-    background-color: #455a64;
-    color: white;
-    position:relative;
-    top:100px;
-    left:600px;
-    
+
+.profilePic {
+    max-width: 6em;
+    max-height: 6em;
+    padding: -5px;
+    margin: -8px;
 }
 
-    h2{
-        color: #c6ff00;
-    }
+.profileContainer {
+    background-color: #1c313a;
+    padding: 2em;
+    margin: 0 0 2em 0; 
+}
+
+h2 {
+    color: white;
+}
+
+#displayName {
+    font-size: 40px; 
+}
+
+.editButton {
+    border: solid 3px #fdff58 !important;
+    background-color:  #c6ff00 !important;
+    color:  #1c313a !important;
+    margin: 28px; 
+    font-size: 15px !important; 
+    font-weight: bold !important; 
+}
+
+p {
+    font-size: 20px; 
+}

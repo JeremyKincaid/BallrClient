@@ -1,0 +1,24 @@
+.mainDiv {
+    width: 100%;
+    background-color: #455a64; 
+}
+
+/* #button {
+    margin-top: 2.5em;
+    margin-left: 86em;
+    width: 80px;
+    height: 40px; 
+    border: solid 3px #fdff58; 
+    font-weight: bold;
+    color: #1c313a;
+    background-color: #c6ff00; 
+} */
+
+#logout {
+    text-decoration: none !important;
+    color: white;
+    background-color: #333333; 
+    padding-top: 20px; 
+    cursor: pointer; 
+}
+

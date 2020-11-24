@@ -1,43 +1,62 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './UserProfile.css';
-import{
-    Card, CardText, CardBody,
-    CardTitle, Button, CardImg
-  } from 'reactstrap';
+
+import { Row, Col, Container, Button, Modal } from 'reactstrap';
+import UserEdit from './UserEdit';
 import ImgUpload from './ImgUpload';
+import AddFriend from './AddFriend';
 
 
+// User Profile need displayname of users?
 
 const UserProfile = (props) => {
-    const [userProfile, setUserProfile] = useState('');
-    const [description, setDescription] = useState('');
-//     useEffect(() => {
-//       fetchDisplayName()
-//     }, []
-//     )
 
-//     const fetchDescription = () => {
-//     fetch('http://localhost:3000/user/id', {
-//       method: 'GET'
-//     }). then ( r=> r.json())
-//     .then(rArr => setDescription(rArr))
-// }
+  const [user, setUser] = useState('');
+  const [modal, setModal] = useState(false);
 
-        return (
-            <div>
-      <ImgUpload />
-                <Card>
-                <CardTitle tag="h2">Ballr,</CardTitle>
-                
-                {/* <CardImg top width="100%" src='' alt="Card image cap" /> */}
-        <CardBody>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-            </div>
-        )
-    
+  useEffect(
+    () => {
+        fetchUser()
+    }, []
+  )
+
+  const toggle = () => {
+    setModal(!modal);
   }
+
+  const fetchUser = () => {
+    fetch(`http://localhost:3000/user/${props.currentUser}`, {
+      method: 'GET'
+    }).then(r => r.json())
+      .then(rObj => setUser(rObj.user))
+      .catch(err => console.log(err))
+    }
+
+  return (
+    <Container className="profileContainer" fluid={true}>
+      <Row>
+        <Col>
+          <img className="profilePic" src = {user.profilepic ? user.profilepic : "https://res.cloudinary.com/dc7cdwbh0/image/upload/v1605829363/BallrApp/yysv5rrbggtxxkdoa558.png"} alt ="avatar" />
+
+        </Col>  
+        <Col> 
+        <h2 id="displayName">{ user.displayname }</h2>
+        <p>{ user.description }</p>
+        </Col>
+
+          {/* <ImgUpload sessionToken={props.sessionToken} /> */}
+        <Col>
+        <Button className="editButton" onClick={toggle}>Edit Profile</Button>
+
+        </Col>
+        {/* <AddFriend /> */}
+      </Row>
+      <Modal isOpen={modal} className="createModal">
+          <UserEdit sessionToken = {props.sessionToken} user={user} toggle={toggle}/>
+      </Modal>
+
+    </Container>
+  )
+}
 
 export default UserProfile;
