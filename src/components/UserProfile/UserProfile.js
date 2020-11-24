@@ -42,8 +42,7 @@ return (
         <ImgUpload sessionToken={props.sessionToken} />
         <br />
         <CardText>{`Here's a little about myself: ${description}`}</CardText>
-        <p>{`Rating: ${rating}`}</p>
-        
+        <p>{`Rating: ${rating}`}</p>  
       </CardBody>
     </Card>
 
