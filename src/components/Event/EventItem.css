@@ -16,3 +16,11 @@
     background-color:  #c6ff00;
     color:  #1c313a;
 }
+
+.deleteEvent {
+    border: 3px solid #fdff58 !important; 
+    width: 135px; 
+    height: 45px; 
+    font-size: 16px !important; 
+    font-weight: bold !important; 
+}

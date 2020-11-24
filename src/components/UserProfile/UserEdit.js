@@ -86,8 +86,8 @@ const UserEdit = (props) => {
               console.log(rObj);
               resetForm();
               props.toggle();
-          })
-    }
+          }) 
+    }   
 
     return(
         <div>

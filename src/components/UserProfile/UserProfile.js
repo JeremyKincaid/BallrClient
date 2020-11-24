@@ -39,8 +39,8 @@ const UserProfile = (props) => {
           <img className="profilePic" src = {user.profilepic ? user.profilepic : "https://res.cloudinary.com/dc7cdwbh0/image/upload/v1605829363/BallrApp/yysv5rrbggtxxkdoa558.png"} alt ="avatar" />
 
         </Col>  
-        <Col>
-        <h2>{ user.displayname }</h2>
+        <Col> 
+        <h2 id="displayName">{ user.displayname }</h2>
         <p>{ user.description }</p>
         </Col>
 
@@ -52,7 +52,7 @@ const UserProfile = (props) => {
         {/* <AddFriend /> */}
       </Row>
       <Modal isOpen={modal} className="createModal">
-          <UserEdit sessionToken = {props.sessionToken} user={user} toggle={toggle} />
+          <UserEdit sessionToken = {props.sessionToken} user={user} toggle={toggle}/>
       </Modal>
 
     </Container>

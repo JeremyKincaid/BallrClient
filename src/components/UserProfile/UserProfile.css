@@ -2,6 +2,8 @@
 .profilePic {
     max-width: 6em;
     max-height: 6em;
+    padding: -5px;
+    margin: -8px;
 }
 
 .profileContainer {
@@ -14,9 +16,19 @@ h2 {
     color: white;
 }
 
+#displayName {
+    font-size: 40px; 
+}
+
 .editButton {
-    border: solid 1px #fdff58 !important;
+    border: solid 3px #fdff58 !important;
     background-color:  #c6ff00 !important;
     color:  #1c313a !important;
     margin: 28px; 
+    font-size: 15px !important; 
+    font-weight: bold !important; 
+}
+
+p {
+    font-size: 20px; 
 }
