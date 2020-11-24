@@ -1,22 +1,29 @@
 import React from 'react'; 
-import { Navbar, Nav, Container, Row, Col} from 'reactstrap'; 
+import { Navbar, NavbarText, Nav, NavItem, Container, Row, Col} from 'reactstrap'; 
 import Logout from '../Logout/Logout'; 
 import './Navbar.css'; 
 
 const Navbars = (props) => {
     return (
-        <div>
+        <div id="mainDiv">
             <Navbar className="navbar" expand="md">
-                <Nav className="nav" navbar>
-                    <Logout clearToken={props.clearToken} />
+                <Nav>
+                    <NavItem>   
+                        <NavbarText id="ballr">
+                            BALLR
+                        </NavbarText>
+                    </NavItem>
+                    <NavItem>
+                        <Logout clearToken={props.clearToken} />
+                    </NavItem>
                 </Nav>
-            </Navbar>
-            <Container>
+            </Navbar>  
+            {/* <Container> 
                 <Row>
                         <Row> 
                             <Col sm="2">
                                B
-                            </Col>
+                            </Col> 
                             <Col sm="2">
                                A
                             </Col>
@@ -31,7 +38,7 @@ const Navbars = (props) => {
                             </Col>
                         </Row>
                 </Row>
-            </Container>
+            </Container> */}
         </div>
     )
 }
